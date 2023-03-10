@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosies Faves</title>
+   <link rel="stylesheet" href="week12.css">
+   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    
+</head>
+<body>
+  <h1>Rosies Faves</h1>
+	<form>
+		<label for="songName">Song Name:</label>
+		<input type="text" id="songName" name="songName"><br><br>
+		<label for="artistName">Artist Name:</label>
+		<input type="text" id="artistName" name="artistName"><br><br>
+		<label for="genre">Genre:</label>
+		<input type="text" id="genre" name="genre"><br><br>
+		<button type="button" onclick="addSong()">Add Song</button>
+	</form>
+	<br><br>
+	<div class="container">
+		<table id="songTable">
+			<tr>
+				<th>Song Name</th>
+				<th>Artist Name</th>
+				<th>Genre</th>
+				
+			</tr>
+			<!-- <tr>
+	
+				<th>Heat Waves</th>
+				<th>Glass Animals</th>
+				<th>Alternative</th>
+				<th>
+				<button type="button" onclick="removeSong()">Remove Song</button>
+				<button type="button" onclick="moveUpSong()">Move Up</button>
+				</th>
+			</tr> -->
+		</table>
+
+	</div>
+	
+
+    <script src="week12.js"></script>
+	<script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
