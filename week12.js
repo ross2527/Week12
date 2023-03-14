@@ -1,13 +1,9 @@
 // functionality 
 // bootstrap and css
 
-
 //1)table - push data into table
 
-
 //2)on click of table button - pull info into 
-
-
 
 function renderSongs() {
 	while (songsContainer.firstChild) {
@@ -29,11 +25,7 @@ function renderSongs() {
 	}
 }
 
-// renderPlaylist()
-// renderSongs()
 // delete items on list
-
-
 // update in some way shape or form
 
 //update name of something on the list
@@ -102,19 +94,6 @@ function displaySongList() {
 // on click event then create ID in css
 //favorites function
 
-
-// function moveUpSong(id) {
-// 	id = id.trim();
-// 	const element = document.getElementById(id);
-// 	let upList = songList.indexOf(id);
-
-// 	for (items in songList) {
-
-// 	}
-
-
-
-// } 
 // instead of remove, using append. 
 
 //getelement by ID id is favorite
@@ -176,26 +155,7 @@ function removeSong(id) {
 	console.log("After\n")
 	console.log(songList)
 }
-	// while (table.rows.length > 1) {
-	// 	table.deleteRow(1);
-	// }
 
-	// for (let i = 0; i < songList.length; i++) {
-	// 	let row = table.insertRow(i + 1);
-	// 	let nameCell = row.insertCell(0);
-	// 	let artistCell = row.insertCell(1);
-	// 	let genreCell = row.insertCell(2);
-	// 	let editCell = row.insertCell(3);
-	// 	let deleteCell = row.insertCell(4);
-
-	// 	nameCell.innerHTML = songList[i].name;
-	// 	artistCell.innerHTML = songList[i].artist;
-	// 	genreCell.innerHTML = songList[i].genre;
-
-	// 	let editButton = document.createElement("button");
-	// 	editButton.innerHTML = "Edit";
-	// 	editButton.onclick = function() {editSong(i)};
-	// 	editCell.appendChild(editButton);
 
 	// 	let deleteButton = document.createElement("button");
 	// 	deleteButton.innerHTML = "Delete";
