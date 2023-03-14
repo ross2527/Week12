@@ -10,23 +10,23 @@
 
 
 function renderSongs() {
-    while (songsContainer.firstChild) {
-        songsContainer.removeChild(songsContainer.firstChild)
-    }
+	while (songsContainer.firstChild) {
+		songsContainer.removeChild(songsContainer.firstChild)
+	}
 
-    for (const song of songs) {
-        const div = document.createElement("div")
-        div.textContent = song.name
+	for (const song of songs) {
+		const div = document.createElement("div")
+		div.textContent = song.name
 
-        const addButton = document.createElement("button")
-        addButton.textContent = "+"
-        addButton.classList.add("btn")
-        addButton.classList.add("btn-success")
-        addButton.addEventListener("click", () => addToPlaylist(song.id))
-        div.appendChild(addButton)
+		const addButton = document.createElement("button")
+		addButton.textContent = "+"
+		addButton.classList.add("btn")
+		addButton.classList.add("btn-success")
+		addButton.addEventListener("click", () => addToPlaylist(song.id))
+		div.appendChild(addButton)
 
-        songsContainer.appendChild(div)
-    }
+		songsContainer.appendChild(div)
+	}
 }
 
 // renderPlaylist()
@@ -49,6 +49,7 @@ function renderSongs() {
 let songList = [];
 
 function addSong() {
+
 	let songName = document.getElementById("songName").value;
 	let artistName = document.getElementById("artistName").value;
 	let genre = document.getElementById("genre").value;
@@ -88,12 +89,12 @@ function displaySongList() {
 	let id = "entry" + i;
 
 	$("table").find("tbody").append("<tr id=\"" + id + "\">" +
-	"<th>" + songList[i].name + "</th>"
-	+ "<th>" + songList[i].artist + "</th>"
-	+ "<th>" + songList[i].genre + "</th>"
-	+ "<th><button type=\"button\" onclick=\"removeSong('" + id + "')\">Remove Song</button></th>"
-	+ "<th><button type=\"button\" onclick=\"moveUpSong('" + id + "')\">Move Up</button><th>"
-	+ "</tr>"
+		"<th>" + songList[i].name + "</th>"
+		+ "<th>" + songList[i].artist + "</th>"
+		+ "<th>" + songList[i].genre + "</th>"
+		+ "<th><button type=\"button\" onclick=\"removeSong('" + id + "')\">Remove Song</button></th>"
+		+ "<th><button type=\"button\" onclick=\"heartButton('" + id + "')\">Favorite Song</button><th>"
+		+ "</tr>"
 	)
 }
 
@@ -102,18 +103,57 @@ function displaySongList() {
 //favorites function
 
 
-function moveUpSong(id) {
+// function moveUpSong(id) {
+// 	id = id.trim();
+// 	const element = document.getElementById(id);
+// 	let upList = songList.indexOf(id);
+
+// 	for (items in songList) {
+
+// 	}
+
+
+
+// } 
+// instead of remove, using append. 
+
+//getelement by ID id is favorite
+
+let message = ""
+
+//populate this array with favorites and then delete them once unfavorited
+favs = [];
+function heartButton(id) {
 	id = id.trim();
+	let songName = document.getElementById("songName").value;
+
 	const element = document.getElementById(id);
-	let upList = songList.indexOf(id);
+	//let main = $("<main/>");
 
-	for (items in songList) {
 
+
+	//heartButton.text("<3"); {
+
+
+
+	if (message != "<3") {
+		message = "<3";
+		favs.push(songName)
+		console.log(favs);
+		//heartButton.addClass("btn btn-danger")\
+		element.classList.add("favorite");
+	} else {
+		message = "";
+		element.classList.remove("favorite");
+		favs.pop(songName);
+		//heartButton.addClass("btn btn-outline-danger")
+		console.log(favs);
 	}
-
-
+	// container.append(main) 
 
 }
+//}
+
 
 function removeSong(id) {
 	id = id.trim();
@@ -123,11 +163,11 @@ function removeSong(id) {
 	console.log("Before\n");
 	console.log(songList);
 
-	for (let i =0; i < songList.length; i++) {
+	for (let i = 0; i < songList.length; i++) {
 		entry = songList[i];
 
 		if (entry.id == id) {
-			songList.splice(i,1);
+			songList.splice(i, 1);
 
 			break;
 		}

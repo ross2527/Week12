@@ -6,23 +6,24 @@ body {
 
 h1 {
 	text-align: center;
-    font-size: large;
-    color: darkblue;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: large;
+	color: darkblue;
+	font-weight: bold;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 form {
 	text-align: center;
 }
 
-table {
-	border-collapse: seperate;
+/* table {
+	border-collapse: collapse;
 	width: 100%;
-}
+} */
 
-th, td {
-	text-align: left;
+th,
+td {
+	text-align: center;
 	padding: 8px;
 }
 
@@ -31,7 +32,7 @@ tr:nth-child(even) {
 }
 
 button {
-	background-color: #634caf;
+	background-color: #6750b3;
 	color: rgb(214, 235, 247);
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -42,4 +43,9 @@ button {
 
 button:hover {
 	opacity: 0.8;
+}
+
+.favorite {
+	color: darkorange;
+	font-weight: bolder;
 }
